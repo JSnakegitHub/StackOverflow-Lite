@@ -1,5 +1,7 @@
 # StackOverflow-Lite
-Andela Challenge 1
+
+
+Andela Challenge 1: UI Templates
 
 Required Features
 
@@ -28,6 +30,6 @@ Users can fetch all questions he/she has ever asked on the platform
 
 Users can search for questions on the platform.
 
-Users can view questions with the most answers..
+Users can view questions with the most answers.
 
 
