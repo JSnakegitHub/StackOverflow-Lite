@@ -18,7 +18,7 @@ Users can accept an answer out of all the answers to his/her question as the pre
 
 
 
-Optional Features
+Optional Features For StackOverflow-Lite
 
 Users can upvote or downvote an answer.
 
