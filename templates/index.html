@@ -10,10 +10,8 @@
   <div class="topnav" id="myTopnav" style="margin-right:300px;">
     <a href="#home">
      <img id="logo" src="../static/files/stack.png" alt="StackOverflow-lite Logo">StackOverflow-lite</a>
-    <a class="active" href="#home">Dashboard</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+     <a href="#contact">Contact Us</a>
+     <a href="#about">About Us</a>
      <div class="topnav-right" style="margin:5px;">
       <a href="users/register.html">Sign Up</a>
       <a href="users/login.html">Sign In</a>
@@ -24,27 +22,72 @@
     </a>
   </div>
 <div class="contentbody">
-  <div class="leftsidebar">one</div>
-    <div class="centerbar">
-      <div class="buttonask" style="margin:55px;background-color:black;">
-        <button style="background:blue; float:right; height:40px;width:200px;color:white; border-radius:5px;">Ask Question</button>
+  <div class="leftsidebar">
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="questions/askquestion.html">Ask Question</a>
+      <a href="questions/viewallquestions.html">View Questions</a>
+      <a href="#">My Most Recent Activities</a>
+      <a href="#">My Profile</a>
+    </div>
+
+    <h2>StackOverflow-Lite</h2>
+    <p>Click on the element below to open the side navigation menu.</p>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Side Menu</span>
+
+  </div>
+    <div class="centerbar-dashboard">
+      <div class="buttonask">
+        <center>
+        </br>
+      </br>
+        <strong>Top Questions of All Time</strong>
+      </br>
+    </br>
+        <table>
+          <col width="80">
+          <col width="80">
+          <col width="500">
+          <col width="100">
+
+            <tr>
+              <th>Votes</th>
+              <th>Answers</th>
+              <th>Questions</th>
+              <th>Asked By</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>3</td>
+              <td>Where were you yesterday</td>
+              <td>Andela</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>4</td>
+              <td>How old are you my friend</td>
+              <td>Daniel</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>6</td>
+              <td>Who told you to disturb geeks!?</td>
+              <td>Walter Nyeko</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>4</td>
+              <td>Do you love Andela?</td>
+              <td>Ssali</td>
+            </tr>
+        </table>
+
+      </center>
+
       </div>
-      <div class="fourbuttons">
-        <div class="btn-group">
-          <button class="button">Button</button>
-          <button class="button">Button</button>
-          <button class="button">Button</button>
-          <button class="button">Button</button>
-        </div>
-        <hr>
-
-
-      </div>
-
 
     </div>
-      <div class="rightsidebar">three</div>
-
 
 
 
@@ -54,10 +97,13 @@
 
 
 </div>
+<footer>
+  <p>Posted by: Walter</p>
+</br>
+  <p>Contact information: <a href="mailto:nyekowalter69@gmail.com">
+  nyekowalter69@gmail.com</a>.</p>
+</footer>
 
-  <footer>
-<script type="text/javascript" src="../static/javascripts/main.js">
-
-</script>
+<script type="text/javascript" src="../static/javascripts/main.js"></script>
   </body>
 </html>
