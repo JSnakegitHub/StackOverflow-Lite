@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Stack Overflow - Where Developers Learn, Share, &amp; Build Careers</title>
-  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="../../static/css/index.css">
 </head>
 <body>
   <!-- Navigation Bar -->
   <nav>
     <div class="left">
-      <img src="../static/files/logo.PNG" alt="StackOverflow-Lite">
+      <img src="../../static/files/logo.PNG" alt="StackOverflow-Lite">
       <input type="text" placeholder="Search...">
       <div class="sign-in-up">
           <button class="login-button" onclick="showLoginPage()">Log In</button>
@@ -29,20 +29,15 @@
   <div class="section">
     <div class="side-menu">
       <ul>
-        <li><a href="index.html" class="active-home">Home</a></li>
-        <li><a href="users/profile.html">Profile</a></li>
+        <li><a href="../index.html" class="active-home">Home</a></li>
+        <li><a href="../users/profile.html">Profile</a></li>
       </ul>
     </div>
 
     <div class="question">
        <div id="myLoginDIV" style="display: none;">
-         <center>
-          <form class="login-form" action="" method="post">
-
-            <div class="my-labels">
-                <label for="">Email</label>
-            </div>
-            
+          <form class="" action="" method="post">
+            <label for="">Email</label>
             </br>
             <input class="left-input" type="text" name="username/email" value="" size="35" required>
             </br>
@@ -53,105 +48,85 @@
             <input class="left-input" type="password" name="password" value="" required>
             </br>
             </br>
-            <input class="left-input-checkbox" type="checkbox" id="remember-me" class="remember-me" value="Remember Me">
-            Remember Me<br>
+            <input type="checkbox" id="remember-me" class="remember-me" value="Remember Me">Remember Me<br>
             </br>
             <input class="submit-button" type="submit" name="" value="Submit">
             </br>
             </br>
             Forgot Password? <a class="recover-password" href="#">Recover It Here</a>
     
-            </br>
-            </br>
-               Need an account? <a class="recover-password" href="register.html">Sign Up Here</a>
+          </br>
+          </br>
+          Need an account? <a class="recover-password" href="../index.html">Sign Up Here</a>
             </form>
-          </center>
       </div>
 
-      <div id="mySignUpDIV" class="sign-up-here" style="display: none;">
-
-        <center>
-          <form class="sign-up-form" action="" method="post">
-              <label for="">Your Name</label>
-              </br>
-              <input class="left-input" type="text" name="username/email" value="" size="35" required>
-              </br>
-              
-    
-              <label for="">Email</label>
-              </br>
-              <input class="left-input" type="text" name="username/email" value="" size="35" required>
-              </br>
-              
-    
-    
-              <label for="">UserName</label>
-              </br>
-              <input class="left-input" type="text" name="username/email" value="" size="35" required>
-              </br>
-              
-    
-              <label for="">Password</label>
-              </br>
-              <input class="left-input" type="password" name="password" value="" required>
-              </br>
-              
-
-
-              <label for="">Confirm Password</label>
-              </br>
-              <input class="left-input" type="password" name="password" value="" required>
-              </br>
-              </br>
-              
-
-              <input class="sign-up-button" type="submit" name="" value="Sign Up">
-              </br>
-    
-              </br>
-                Have an account already?<a class="recover-password" href="login.html">Sign In Here</a>
-            </form>
-          </center>
 
 
 
-      </div>
 
-      <div class="search-features">
-          <center>
-              <select class="orderby-select" name="">
-  
-                  <option value="">Most Recent Questions</option>
-                  <option value="">Most Answered Questions</option>
-                  <option value="">Most Voted Questions</option>
-                  <option value="">Have Accepted Answers</option>
+      <div class="question-fields">
+            <center>
              
-              </select>
-             
-              <select class="users-select" name="">
-             
-                  <option value="">Asked By Me</option>
-                  <option value="">Asked by Others</option>
-             
-              </select>
-             
-                  <input class="my-search-input" type="text" name="" value="" placeholder="Search Questions...">
-                  <div class="ask-button">
-                      <button><a class="ask-me-anchor" href="questions/ask_question.html" >Ask Question</a></button>
-                  </div>
+      
+                
+            <div class="answer">
+                    <h3>Title of the Question</h3>
+                    <textarea rows="2" cols="50" class="question-area" placeholder="Please, provide a brief and straight-forward title to your question"></textarea>
+                    <h4>Description of the Question</h4>
+                    <div class="editor-ask-question-description">
+                            <textarea name="editor1" id="editor1" cols="30" rows="5"></textarea>
+                    </div>
+                    
+             </div>
+           
+            </br>
+              <input class="sumitQuestion" type="submit" name="" value="Submit Question">
+         <hr></hr>
             </center>
+      
         </div>
+      
+
+
+    </br></br>
+
+
+        <div class="search-features">
+            <center>
+                    <h3>Search Questions</h3>
+                <select class="orderby-select" name="">
+    
+                    <option value="">Most Recent Questions</option>
+                    <option value="">Most Answered Questions</option>
+                    <option value="">Most Voted Questions</option>
+                    <option value="">Have Accepted Answers</option>
+               
+                </select>
+               
+                <select class="users-select" name="">
+               
+                    <option value="">Asked By Me</option>
+                    <option value="">Asked by Others</option>
+               
+                </select>
+               
+                    <input class="my-search-input" type="text" name="" value="" placeholder="Search Questions...">
+            </center>
+          </div>
+
 
 
       <div class="top-question">
         <!-- <div class="heading">
             <h1>Top Questions</h1>
         </div> -->
-        <!-- <div class="ask-button">
-            <button><a class="ask-me-anchor" href="questions/ask_question.html" >Ask Question</a></button>
+        
+        <!-- <div class="clearfix">
+
+        
         </div> -->
-        <!-- <div class="clearfix"></div>
-        <div class="interesting">
+        <!-- <div class="interesting">
             <ul>
               <li><a href="#">Interesting</a></li>
               <li><a href="#">Featured</a></li>
@@ -175,7 +150,7 @@
           </ul>
         </div>
         <div class="post-title">
-          <h3><a href="questions/details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam maxime ad soluta adipisci quae. Mollitia officia repellat in?</a></h3>
+          <h3><a href="details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam maxime ad soluta adipisci quae. Mollitia officia repellat in?</a></h3>
         </div>
       </div>
       <!-- Post Two -->
@@ -188,7 +163,7 @@
             </ul>
           </div>
           <div class="post-title">
-            <h3><a href="questions/details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam maxime ad soluta adipisci quae. Mollitia officia repellat in?</a></h3>
+            <h3><a href="details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam maxime ad soluta adipisci quae. Mollitia officia repellat in?</a></h3>
           </div>
         </div>
       <!-- Post Three -->
@@ -201,7 +176,7 @@
             </ul>
           </div>
           <div class="post-title">
-            <h3><a href="questions/details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam maxime ad soluta adipisci quae. Mollitia officia repellat in?</a></h3>
+            <h3><a href="details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam maxime ad soluta adipisci quae. Mollitia officia repellat in?</a></h3>
           </div>
         </div>
       <!--End of Post -->
@@ -239,6 +214,13 @@
     <p>&copy; 2018 - Stack Overflow-Lite</p>
   </footer>
 
-  <script src="../static/javascripts/main.js"></script>
+
+  <!-- WYSIWYG Editor -->
+  <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+  <script>
+    CKEDITOR.replace( 'editor1' );
+  </script>
+
+  <script src="../../static/javascripts/main.js"></script>
 </body>
 </html>
