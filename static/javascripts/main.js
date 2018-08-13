@@ -19,8 +19,11 @@ function closeNav() {
 
  function showLoginPage() {
     var x = document.getElementById("myLoginDIV");
+    var y = document.getElementById("mySignUpDIV");
+
     if (x.style.display === "none") {
         x.style.display = "block";
+        y.style.display = "none"
     } else {
         x.style.display = "none";
     }
@@ -28,8 +31,10 @@ function closeNav() {
 
 function showSignUpPage() {
     var x = document.getElementById("mySignUpDIV");
+    var y = document.getElementById("myLoginDIV");
     if (x.style.display === "none") {
         x.style.display = "block";
+        y.style.display = "none";
     } else {
         x.style.display = "none";
     }
