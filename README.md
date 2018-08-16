@@ -1,4 +1,4 @@
-# StackOverflow-Lite
+# StackOverflow-Lite UI
 
 
 Andela Challenge 1: UI Templates
@@ -31,5 +31,12 @@ Users can fetch all questions he/she has ever asked on the platform
 Users can search for questions on the platform.
 
 Users can view questions with the most answers.
+
+
+
+
+THE LINK TO THE UI FOR THE PROJECT ON GITHUB PAGES
+
+jsnakegithub.github.io
 
 
