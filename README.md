@@ -33,7 +33,7 @@
 -Users can view questions with the most answers.
 
 # **LINK TO THE PROJECT"S UI ON GITHUB PAGES**
-[StackOverflow-Lite](jsnakegithub.github.io)
+[StackOverflow-Lite](http://www.jsnakegithub.github.io)
 
 
 
