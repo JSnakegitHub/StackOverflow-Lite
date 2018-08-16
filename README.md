@@ -1,35 +1,40 @@
-# StackOverflow-Lite
+# **StackOverflow-Lite**
 
 
-Andela Challenge 1: UI Templates
+## Andela Challenge 1: UI Templates
 
-Required Features
+### *Required Features*
 
-Users can create an account and log in.
+-Users can create an account and log in.
 
-Users can post questions.
+-Users can post questions.
 
-Users can delete the questions they post.
+-Users can delete the questions they post.
 
-Users can post answers.
+-Users can post answers.
 
-Users can view the answers to questions.
+-Users can view the answers to questions.
 
-Users can accept an answer out of all the answers to his/her question as the preferred answer. 
-
-
+-Users can accept an answer out of all the answers to his/her question as the preferred answer. 
 
 
-Optional Features For StackOverflow-Lite
 
-Users can upvote or downvote an answer.
 
-Users can comment on an answer.
+### *Optional Features For StackOverflow-Lite*
 
-Users can fetch all questions he/she has ever asked on the platform
+-Users can upvote or downvote an answer.
 
-Users can search for questions on the platform.
+-Users can comment on an answer.
 
-Users can view questions with the most answers.
+-Users can fetch all questions he/she has ever asked on the platform
+
+-Users can search for questions on the platform.
+
+-Users can view questions with the most answers.
+
+# **LINK TO THE PROJECT"S UI ON GITHUB PAGES**
+[StackOverflow-Lite](jsnakegithub.github.io)
+
+
 
 
