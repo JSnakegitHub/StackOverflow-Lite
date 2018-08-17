@@ -35,7 +35,7 @@ Users can view questions with the most answers.
 
 
 
-###THE LINK TO THE UI FOR THE PROJECT ON GITHUB PAGES
+### THE LINK TO THE UI FOR THE PROJECT ON GITHUB PAGES
 
 [jsnakegithub.github.io](jsnakegithub.github.io)
 
