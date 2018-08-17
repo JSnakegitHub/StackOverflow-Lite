@@ -1,9 +1,9 @@
 # StackOverflow-Lite UI
 
 
-Andela Challenge 1: UI Templates
+## Andela Challenge 1: UI Templates
 
-Required Features
+*Required Features*
 
 Users can create an account and log in.
 
@@ -20,7 +20,7 @@ Users can accept an answer out of all the answers to his/her question as the pre
 
 
 
-Optional Features For StackOverflow-Lite
+*Optional Features For StackOverflow-Lite*
 
 Users can upvote or downvote an answer.
 
@@ -35,7 +35,7 @@ Users can view questions with the most answers.
 
 
 
-THE LINK TO THE UI FOR THE PROJECT ON GITHUB PAGES
+###THE LINK TO THE UI FOR THE PROJECT ON GITHUB PAGES
 
 [jsnakegithub.github.io](jsnakegithub.github.io)
 
