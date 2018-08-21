@@ -1,0 +1,6 @@
+[
+  "test_app.py::test_get_all_questions_is_successfully_rendered", 
+  "test_app.py::test_get_a_question_is_successfully_rendered_for_details_page_with_id", 
+  "test_app.py::test_post_question_is_json_formatted", 
+  "test_app.py::test_post_answer_is_json_formatted"
+]
