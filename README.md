@@ -35,6 +35,13 @@
 # **LINK TO THE PROJECT'S UI ON GITHUB PAGES**
 [StackOverflow-Lite](http://jsnakegithub.github.io)
 
+## Important Information
+1. In my git repositories list, there is a repository that is called JSnakegitHub.github.io which I used to deploy the UI pages on gitHub pages
+2. The branch called stackoverflow-lite in StackOverflow-Lite repository also has the codes for the UI
+3. I have merged this branch to the master so far.
+4. I have separate branches for the APIs. These branches I have not merged them to the master because they are just for the APIs
+
+
 
 
 
