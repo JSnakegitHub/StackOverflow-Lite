@@ -1,4 +1,0 @@
-{
-  "test_app.py::test_post_answer_is_json_formatted": true, 
-  "test_app.py::test_post_question_is_json_formatted": true
-}
