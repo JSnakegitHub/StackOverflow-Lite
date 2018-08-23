@@ -8,7 +8,9 @@ cache: pip
 install:
   - pip install -r requirements.txt
   
-script: python -m pytest && coverage run -m pytest && coverage report
+script: 
+  - py.test --cov=api
+  - coverage report
 
 after_success:
   - coveralls

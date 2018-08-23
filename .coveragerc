@@ -1,0 +1,11 @@
+[report]=
+show_missing=True
+omit=
+   ./venv/*
+   */__pycache__/*
+   ./tests/*
+   ./.pytest_cache/*
+   *.pyc
+   /.vscode/*
+   .gitignore
+   
