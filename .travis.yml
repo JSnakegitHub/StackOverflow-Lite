@@ -7,7 +7,6 @@ cache: pip
 
 install:
   - pip install -r requirements.txt
-  - ./travis-tool.sh github_package jimhester/covr
   
 script: 
   - py.test --cov=api
