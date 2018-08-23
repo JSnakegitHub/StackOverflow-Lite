@@ -1,6 +1,6 @@
 
 from flask import Flask, session, jsonify, request, json, Response
-from models import Questions, Answers, questionTempId
+from models import Questions, Answers
 
 app = Flask(__name__)
 
@@ -8,51 +8,37 @@ app.config['SECRET_KEY'] = 'fhghgjhjhm'
 
 allQuestions = Questions()
 allAnswers = Answers()
-temporaryId = questionTempId()
 
 @app.route('/api/v1/questions')
 def getAllQuestions():
    return jsonify({'Questions' : allQuestions})
 
-@app.route('/api/v1/question/<int:id>', methods=['GET'])
+@app.route('/api/v1/questions/<int:id>', methods=['GET'])
 def getOneQuestionById(id):
 
     questionReturned = [question for question in allQuestions if question["id"] == id]
     
-    answersReturned = [answer for answer in allAnswers if answer["question_id"] == id]
+    # answersReturned = [answer for answer in allAnswers if answer["question_id"] == id]
 
-    temporaryId[0]['id'] = id
+    return jsonify({'Question' :questionReturned })
 
-    return jsonify({'Answers' : answersReturned, 'Quetion' :questionReturned })
-
-
-@app.route('/api/v1/question', methods=['POST', 'GET'])
+@app.route('/api/v1/questions', methods=['POST', 'GET'])
 def postQuestion():
-
 
     request_data  = request.get_json()
     if (valid_question(request_data)):
 
-        dictionary_with_highest_question_id = max(allQuestions, key = lambda x:x['id'])
-
-        highest_value_of_id = dictionary_with_highest_question_id['id']
-
-        the_next_value_of_id = highest_value_of_id + 1
+        question_id = len(allQuestions)+1
 
         question = {
-                'id' : the_next_value_of_id,
-                'views' : 0,
-                'answers' : 0,
-                'votes' : 0,
+                'id' : question_id,
                 'title': request_data['title'],
                 'content': request_data['content'],
-                'author': 'Walter Nyeko',
-                'ask_date' : '04-08-2018'
-                
+                'answers' : []   
             }
         allQuestions.append(question)
         response = Response("", 201, mimetype="application/json")
-        response.headers['Location'] = "api/v1/question/" + str(request_data['title'])
+        response.headers['Location'] = "api/v1/questions/" + str(request_data['title'])
         return response
     else:
         invalid_entry = {
@@ -63,34 +49,29 @@ def postQuestion():
 
     return jsonify({'Questions' : allQuestions})
     
-@app.route('/api/v1/answers', methods=['POST','GET'])
-def postAnswer():
+@app.route('/api/v1/questions/<int:id>/answers', methods=['POST'])
+def postAnswer(id):
 
 
     request_data  = request.get_json()
     if (valid_answer(request_data)):
 
-        dictionary_with_highest_answer_id = max(allAnswers, key = lambda x:x['id'])
-
-        highest_value_of_id = dictionary_with_highest_answer_id['id']
-
-        the_next_value_of_id = highest_value_of_id + 1
-
-        id_for_clicked_question = temporaryId[0]['id']
+        answer_id = len(allAnswers)+1
 
         yourAnswer = {
-            'id' : the_next_value_of_id, 
-            'question_id' : id_for_clicked_question, 
+            'id' : answer_id, 
+            'question_id' : id, 
             'content' : request_data['content'], 
-            'author' : 'Walter Geek'
+            'author' : "Author"
             }
-        allAnswers.append(yourAnswer)
 
-        question_whose_answer_was_just_given = [question for question in allQuestions if question["id"] == id_for_clicked_question]
+        question_whose_answer_was_just_given = [question for question in allQuestions if question["id"] == id]
         
-        answersReturned = [answer for answer in allAnswers if answer["question_id"] == id_for_clicked_question]
+        answers = question_whose_answer_was_just_given['answers']
 
-        return {'The Question': question_whose_answer_was_just_given, 'Its Answers': answersReturned}, 200
+        answers.append(yourAnswer)
+
+        return ({'The Question': allQuestions})
         
     else:
         invalid_entry = {
