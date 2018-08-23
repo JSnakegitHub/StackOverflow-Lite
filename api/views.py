@@ -1,11 +1,10 @@
 from flask import Flask, session, jsonify, request, json, Response
-from models import Questions, Answers
+from models import Questions
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'fhghgjhjhm'
 allQuestions = Questions()
-allAnswers = Answers()
 
 @app.route('/api/v1/questions')
 def getAllQuestions():
@@ -34,14 +33,13 @@ def postQuestion():
         invalid_entry = {
             "error": "Invalid question object"
         }
-        response = Response(json.dumps(invalid_entry), status=400, mimetype="appliation/json")
-        return response + "Question Object is missing required attributes/properties"
+        return invalid_entry + "Question Object is missing required attributes/properties"
     
 @app.route('/api/v1/questions/<int:id>/answers', methods=['POST'])
 def postAnswer(id):
     request_data  = request.get_json()
     if (valid_answer(request_data)):
-        answer_id = len(allAnswers)+1
+        answer_id = 1
         yourAnswer = {
             'id' : answer_id, 
             'question_id' : id, 
@@ -56,8 +54,8 @@ def postAnswer(id):
         invalid_entry = {
             "Error": "Invalid answer object, missing some parameters"
         }
-        response = Response(json.dumps(invalid_entry), status=400, mimetype="appliation/json")
-        return response   
+        
+        return invalid_entry   
     
 def valid_question(questionObject):
     if "title" in questionObject and "content" in questionObject:
