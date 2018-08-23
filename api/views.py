@@ -28,16 +28,14 @@ def postQuestion():
                 'answers' : []   
             }
         allQuestions.append(question)
-        response = Response("", 201, mimetype="application/json")
-        response.headers['Location'] = "api/v1/questions/" + str(request_data['title'])
-        return response
+    
+        return "Question posted successfully"
     else:
         invalid_entry = {
             "error": "Invalid question object"
         }
         response = Response(json.dumps(invalid_entry), status=400, mimetype="appliation/json")
-        return response
-    return jsonify({'Questions' : allQuestions})
+        return response + "Question Object is missing required attributes/properties"
     
 @app.route('/api/v1/questions/<int:id>/answers', methods=['POST'])
 def postAnswer(id):
@@ -53,10 +51,10 @@ def postAnswer(id):
         question_whose_answer_was_just_given = [question for question in allQuestions if question["id"] == id]
         answers = question_whose_answer_was_just_given['answers']
         answers.append(yourAnswer)
-        return ({'The Question': allQuestions})
+        return jsonify({"Answer posted successfully": answers})
     else:
         invalid_entry = {
-            "error": "Invalid answer object"
+            "Error": "Invalid answer object, missing some parameters"
         }
         response = Response(json.dumps(invalid_entry), status=400, mimetype="appliation/json")
         return response   
