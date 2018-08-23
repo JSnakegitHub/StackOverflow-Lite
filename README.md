@@ -1,6 +1,6 @@
 # StackOverflow-Lite
 ## Andela Challenge 2
-[![Coverage Status](https://coveralls.io/repos/github/JSnakegitHub/StackOverflow-Lite/badge.svg)](https://coveralls.io/github/JSnakegitHub/StackOverflow-Lite)
+[![Coverage Status](https://coveralls.io/repos/github/JSnakegitHub/StackOverflow-Lite/badge.svg?branch=post_an_answer_api)](https://coveralls.io/github/JSnakegitHub/StackOverflow-Lite?branch=post_an_answer_api)
 [![Build Status](https://travis-ci.org/JSnakegitHub/StackOverflow-Lite.svg?branch=post_an_answer_api)](https://travis-ci.org/JSnakegitHub/StackOverflow-Lite)
 
 ## Installation Instructions for :
