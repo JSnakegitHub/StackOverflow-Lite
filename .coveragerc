@@ -8,4 +8,7 @@ omit=
    *.pyc
    /.vscode/*
    .gitignore
+   .coverage
+   Procfile
+
    
