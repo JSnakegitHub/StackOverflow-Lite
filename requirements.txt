@@ -1,3 +1,5 @@
+adium-theme-ubuntu==0.3.4
+aniso8601==3.0.2
 astroid==1.6.5
 atomicwrites==1.1.5
 attrs==18.1.0
@@ -9,7 +11,9 @@ configparser==3.5.0
 ecdsa==0.13
 enum34==1.1.6
 Flask==1.0.2
+Flask-API==1.0
 Flask-MySQLdb==0.2.0
+Flask-RESTful==0.3.6
 Flask-WTF==0.14.2
 funcsigs==1.0.2
 futures==3.2.0
@@ -41,6 +45,7 @@ pyodbc==3.0.7
 pysqlite==2.7.0
 pytest==3.7.1
 pytest-flask==0.10.0
+pytz==2018.5
 scandir==1.9.0
 singledispatch==3.4.0.3
 six==1.11.0
