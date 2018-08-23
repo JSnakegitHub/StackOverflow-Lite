@@ -27,7 +27,6 @@ def postQuestion():
                 'answers' : []   
             }
         allQuestions.append(question)
-    
         return "Question posted successfully"
     else:
         invalid_entry = {
@@ -54,7 +53,6 @@ def postAnswer(id):
         invalid_entry = {
             "Error": "Invalid answer object, missing some parameters"
         }
-        
         return invalid_entry   
     
 def valid_question(questionObject):
