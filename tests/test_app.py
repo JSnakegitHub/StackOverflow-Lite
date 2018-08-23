@@ -8,6 +8,16 @@ def client(request):
 
     return test_client
 
+# Helper functions 
+
+def post_json(client, url, json_dict):
+    """Send dictionary json_dict as a json to the specified url """
+    return client.post(url, data=json.dumps(json_dict), content_type='application/json')
+
+def json_of_response(response):
+    """Decode json from response"""
+    return json.loads(response.data.decode('utf8'))
+
 # Test for GET endpoint:
 
 # Testing if the URL for getting all questions is accessible
@@ -24,11 +34,16 @@ def test_get_a_question_is_successfully_rendered_for_details_page_with_id(client
 
 # Testing if the question being sent is JSON formatted
 def test_post_question_is_json_formatted(client):
-    response = client.post('/api/v1/questions')
+    response = client.post('/api/v1/questions', {
+           
+            "title" : "Question One",
+            "content" : "This question seems to be useless"
+           })
     assert response.status_code == 500
 
 # Testing if the answer being sent is JSON formatted
 def test_post_answer_is_json_formatted(client):
-    response = client.post('/api/v1/questions/1/answers')
+    response = client.post('/api/v1/questions/1/answers', { 
+            'content' : 'Yessss'})
     assert response.status_code == 500
     
