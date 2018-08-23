@@ -1,27 +1,14 @@
-sudo: false
-
 language: python
 
 python:
-  - "2.7"
-cache: pip
-install:
-  - pip install pytest
-  - pip install pytest-cov
-  - pip install coveralls
-  - pip install -r requirements.txt
-  - pip install codecov
-script: python tests/test_app.py
-  - pytest --cov=tests/test_app.py
-  - coverage run test_app.py
+  - "2.7.12"
 
-branches:
-  only:
-    - get_all_questions_api
-    - get_one_question_api
-    - post_a_question_api
-    - post_an_answer
+cache: pip
+
+install:
+  - pip install -r requirements.txt
+  
+script: python -m pytest && coverage run -m pytest && coverage report
 
 after_success:
-  - codecov
   - coveralls
