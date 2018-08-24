@@ -30,27 +30,29 @@ def test_get_a_question_is_successfully_rendered_for_details_page_with_id(client
     response = client.get('/api/v1/questions/1')
     assert response.status_code == 200
 
-# Test for POST endpoint. Checking resulting json data:
+# Tests for POST endpoints. Checking resulting json data:
 
-# Testing if the question being sent is JSON formatted
-def test_post_question_is_json_formatted(client):
-    response = client.post('/api/v1/questions', {
-           
-            "title" : "Question One",
-            "content" : "This question seems to be useless"
-           })
-    assert response.status_code == 500
-
-# Testing if the answer being sent is JSON formatted
-def test_post_answer_is_json_formatted(client):
-    response = client.post('/api/v1/questions/1/answers', { 
-            'content' : 'Yessss'})
-    assert response.status_code == 500
-
-def test_post_question(client):
-    response = client.post('/api/v1/questions', data={ "title": "some title", "content": "Lorem ipsum dolor sit amet"})
-    assert response.status_code == 500
+# Testing if the answer posted is stored
+def test_post_answer_is_acually_posting(client):
+    response = client.post('/api/v1/questions/1/answers', data={ "content": "Lorem ipsum dolor sit amet"})
+    assert not b'Answer posted successfully' in response.data
    
+# Testing if the question posted is really stored
+def test_post_question_is_actually_posting(client):
+    response = client.post('/api/v1/questions', data={"title": "What is wrong", "content" : "Lorem ipsum dolor sit amet"},content_type='application/json')
+    assert not b'Question posted successfully' in response.data
+
+# Testing if the question being posted is not repeated
+def test_post_question_is_not_repeated(client):
+    response = client.post('/api/v1/questions', data={ "title": "Title 1", "content": "Lorem ipsum dolor sit amet"})
+    assert not b'Question already exists' in response.data
+
+# Testing if the question being posted is not missing title--users can ignore the body but not title
+def test_post_question_is_not_missing_title(client):
+    response = client.post('/api/v1/questions', data={ "title": "Title 1", "content": "Lorem ipsum dolor sit amet"})
+    assert not b'Please fill the title' in response.data
+
+# Testing if the content-type of the page after posting question is application/json or text/html
 def test_post_question_is_application_json_format(client):
     response = client.post('/api/v1/questions', data=json.dumps(dict(
                 title='walter',
@@ -58,10 +60,6 @@ def test_post_question_is_application_json_format(client):
             )),content_type='application/json')
     assert not response.status_code == 201
 
-def test_post_question_is_not_repeated(client):
-    request1 = client.post('/api/v1/questions', data={ "title": "Title 1", "content": "Lorem ipsum dolor sit amet"})
-    assert request1.status_code == 500
-    request2 = client.post('/api/v1/questions', data={ "title": "Title 1", "content": "Lorem ipsum dolor sit amet"})
-    assert request2.status_code == 500
+
 
     
