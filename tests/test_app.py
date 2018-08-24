@@ -58,7 +58,15 @@ def test_post_question_is_application_json_format(client):
                 title='walter',
                 content='walter@realpython.com'
             )),content_type='application/json')
-    assert not response.status_code == 201
+    assert response.status_code == 200
+
+
+# Testing if the content-type of the page after posting answer is application/json or text/html
+def test_post_answer_is_application_json_format(client):
+    response = client.post('/api/v1/questions/1/answers', data=json.dumps(dict(
+                content='walter@realpython.com'
+            )),content_type='application/json')
+    assert response.status_code == 200
 
 
 
