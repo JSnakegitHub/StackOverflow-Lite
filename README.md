@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/JSnakegitHub/StackOverflow-Lite.svg?branch=post_an_answer_api)](https://travis-ci.org/JSnakegitHub/StackOverflow-Lite)
 [![Coverage Status](https://coveralls.io/repos/github/JSnakegitHub/StackOverflow-Lite/badge.svg?branch=post_an_answer_api)](https://coveralls.io/github/JSnakegitHub/StackOverflow-Lite?branch=post_an_answer_api)
 
-## Installation Instructions for :
+## Installation Instructions for the app:
 1. Install Flask using `pip install flask`
 2. Clone the app using `git clone https://github.com/JSnakegitHub/StackOverflow-Lite.git`
 
@@ -37,9 +37,9 @@
 2. Move to the project directory locally
 3. Once you are in the project's root directory, run the command `python run.py`.
 4. At this point the server should be running.
-5. The application is set to run on port 8080, so the URL for testing this api is `127.0.0.1:8080/api/v1/answers`. 
+5. The application is set to run on port 8080, so the URL for testing this api is `127.0.0.1:8080/api/v1/questions`. 
 6. Testing for this API requires use of Postman.
-7. The above instruction should be able to return all the questions in the data structure when you paste the test URL.
+7. The above instruction should be post the question in the data structure when you do it in Postman.
 
 ## Deployment
 1. The app can be deplyed on Heroku following the Heroku [Documentation](https://devcenter.heroku.com/categories/reference).
