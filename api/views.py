@@ -14,7 +14,11 @@ def getAllQuestions():
 @app.route('/api/v1/questions/<int:id>', methods=['GET'])
 def getOneQuestionById(id):
     questionReturned = [question for question in allQuestions if question["id"] == id]
-    return jsonify({'Question' :questionReturned })
+
+    if not any(eachId['id'] == id for eachId in allQuestions):
+        return "Question Is Not Found"
+    else:
+        return jsonify({'Question' :questionReturned })
 
 @app.route('/api/v1/questions', methods=['POST', 'GET'])
 def postQuestion():
