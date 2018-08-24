@@ -1,5 +1,5 @@
 from flask import Flask, session, jsonify, request, json, Response
-from models import Questions, Answers
+from api.models import Questions, Answers
 
 app = Flask(__name__)
 
