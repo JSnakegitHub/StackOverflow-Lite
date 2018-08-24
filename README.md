@@ -37,8 +37,8 @@
 2. Move to the project directory locally
 3. Once you are in the project's root directory, run the command `python run.py`.
 4. At this point the server should be running.
-5. The application is set to run on port 8080, so the URL for testing this api is `127.0.0.1:8080/api/v1/questions`. 
-6. Testing for this API requires use of Postman.
+5. The application is set to run on port 8080, so the URL for testing this endpoint is `127.0.0.1:8080/api/v1/questions`. 
+6. Testing this endpoint requires use of Postman.
 7. The above instruction should be post the question in the data structure when you do it in Postman.
 
 ## Deployment
