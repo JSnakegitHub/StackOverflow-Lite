@@ -46,4 +46,6 @@ def postAnswer(id):
         'author' : "Author's Name"
         }
     allAnswers.append(yourAnswer)
-    return jsonify({"Answer posted successfully": allAnswers})
+    questionReturned = [question for question in allQuestions if question["id"] == id]
+    questionReturned[0]['answers'].append(yourAnswer)
+    return jsonify({"Answer posted successfully": questionReturned})
