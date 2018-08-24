@@ -46,4 +46,29 @@ def test_post_answer_is_json_formatted(client):
     response = client.post('/api/v1/questions/1/answers', { 
             'content' : 'Yessss'})
     assert response.status_code == 500
+
+def test_post_question(client):
+    response = client.post('/api/v1/questions', data={ "title": "some title", "content": "Lorem ipsum dolor sit amet"})
+    assert response.status_code == 500
+   
+def test_post_question_is_application_json_format(client):
+    response = client.post('/api/v1/questions', data=json.dumps(dict(
+                title='walter',
+                content='walter@realpython.com'
+            )),content_type='application/json')
+    assert not response.status_code == 201
+
+def test_post_question_is_not_missing_title_and_description(client):
+    response = client.post('/api/v1/questions',  data=json.dumps(dict(
+                title='walter',
+                content='walter@realpython.com'
+            )),content_type='application/json')
+    assert not "Question already exists" in response
+
+def test_post_question_is_not_repeated(client):
+    request1 = client.post('/api/v1/questions', data={ "title": "Title 1", "content": "Lorem ipsum dolor sit amet"})
+    assert request1.status_code == 500
+    request2 = client.post('/api/v1/questions', data={ "title": "Title 1", "content": "Lorem ipsum dolor sit amet"})
+    assert request2.status_code == 500
+
     
