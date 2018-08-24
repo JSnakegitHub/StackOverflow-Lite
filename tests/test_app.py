@@ -59,11 +59,7 @@ def test_post_question_is_application_json_format(client):
     assert not response.status_code == 201
 
 def test_post_question_is_not_missing_title_and_description(client):
-    response = client.post('/api/v1/questions',  data=json.dumps(dict(
-                title='walter',
-                content='walter@realpython.com'
-            )),content_type='application/json')
-    assert not "Question already exists" in response
+    pass
 
 def test_post_question_is_not_repeated(client):
     request1 = client.post('/api/v1/questions', data={ "title": "Title 1", "content": "Lorem ipsum dolor sit amet"})

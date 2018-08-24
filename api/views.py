@@ -33,7 +33,7 @@ def postQuestion():
             allQuestions.append(question)
             return "Question posted successfully"
     else:
-        return "Question already exists"  
+        return "Question already exists"
         
 @app.route('/api/v1/questions/<int:id>/answers', methods=['POST'])
 def postAnswer(id):
